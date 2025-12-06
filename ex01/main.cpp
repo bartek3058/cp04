@@ -6,6 +6,11 @@
 #include "Brain.hpp"
 
 int main() {
+    const Animal* j = new Dog();
+    const Animal* i = new Cat();
+    delete j;//should not create a leak
+    delete i;
+    
     const int arraySize = 10;
     Animal* animals[arraySize];
 
@@ -28,6 +33,5 @@ int main() {
     {
         Dog tmp = basic;
     }
-    
     return 0;
 }
